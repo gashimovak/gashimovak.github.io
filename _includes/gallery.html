@@ -1,0 +1,37 @@
+<section class="gallery">
+  {% if include.title %}<h2 class="gallery-title">{{ include.title }}</h2>{% endif %}
+  <div class="gallery-container">
+    <div class="gallery-track">
+      {% for item in include.items %}
+      <figure class="gallery-item">
+        <a href="{{ item.image }}" class="image-modal-trigger">
+          <img src="{{ item.image }}" alt="{{ item.caption | default: 'Gallery image' }}">
+        </a>
+        {% if item.caption %}<figcaption>{{ item.caption }}</figcaption>{% endif %}
+      </figure>
+      {% endfor %}
+    </div>
+    <button class="gallery-prev" aria-label="Previous">&larr;</button>
+    <button class="gallery-next" aria-label="Next">&rarr;</button>
+  </div>
+</section>
+
+<script>
+(function() {
+  document.querySelectorAll('.gallery').forEach(gallery => {
+    const track = gallery.querySelector('.gallery-track');
+    const prev = gallery.querySelector('.gallery-prev');
+    const next = gallery.querySelector('.gallery-next');
+    const scrollAmount = 280;
+
+    prev.addEventListener('click', () => {
+      track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    next.addEventListener('click', () => {
+      track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+

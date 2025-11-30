@@ -1,0 +1,30 @@
+<section class="hero">
+  {% if include.intro_left or include.intro_right %}
+  <div class="hero-intro">
+    <p class="hero-intro-col">{{ include.intro_left }}</p>
+    <p class="hero-intro-col">{{ include.intro_right }}</p>
+  </div>
+  {% endif %}
+  <div class="hero-body">
+    <div class="hero-photo">
+      <a href="{{ include.image }}" class="image-modal-trigger">
+        <img src="{{ include.image }}" alt="{{ include.name }}">
+      </a>
+    </div>
+    <div class="hero-details">
+      <h1 class="hero-name">{{ include.name }}</h1>
+      <div class="hero-life">
+        <div class="hero-column">
+          <div class="hero-date">{{ include.birth_date }}</div>
+          {% if include.birth_place %}<div class="hero-place">{{ include.birth_place }}</div>{% endif %}
+        </div>
+        <div class="hero-column hero-separator">—</div>
+        <div class="hero-column">
+          <div class="hero-date">{{ include.death_date }}</div>
+          {% if include.death_place %}<div class="hero-place">{{ include.death_place }}</div>{% endif %}
+        </div>
+      </div>
+      {% if include.epitaph %}<p class="hero-epitaph">{{ include.epitaph }}</p>{% endif %}
+    </div>
+  </div>
+</section>

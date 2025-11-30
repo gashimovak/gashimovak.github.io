@@ -1,0 +1,14 @@
+<section class="testimonial{% unless include.image %} testimonial--text-only{% endunless %}">
+  {% if include.image %}
+  <figure class="testimonial-image">
+    <a href="{{ include.image }}" class="image-modal-trigger">
+      <img src="{{ include.image }}" alt="{{ include.caption | default: include.name }}">
+    </a>
+    {% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}
+  </figure>
+  {% endif %}
+  <blockquote class="testimonial-quote">
+    <p>{{ include.quote }}</p>
+    <cite>— {{ include.name }}{% if include.role %}, {{ include.role }}{% endif %}</cite>
+  </blockquote>
+</section>

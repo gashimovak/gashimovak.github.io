@@ -1,0 +1,456 @@
+// Landing page styles
+
+.landing
+  display: flex
+  flex-direction: column
+  gap: 0
+
+// Sections
+.landing-section
+  padding: 3em 0
+  position: relative
+
+  &:first-child
+    padding-top: 0
+
+
+.section-header
+  text-align: center
+  margin-bottom: 2.5em
+
+.section-title
+  font-size: 1.35em
+  font-weight: normal
+  margin: 0
+  color: light(40, 70)
+  letter-spacing: 0.2em
+  text-transform: uppercase
+  display: inline-block
+  position: relative
+  padding: 0 1.5em
+
+  &::before,
+  &::after
+    content: ""
+    position: absolute
+    top: 50%
+    width: 2.5em
+    height: 1px
+    background: gray(25)
+
+  &::before
+    right: 100%
+
+  &::after
+    left: 100%
+
+.section-subtitle
+  font-size: 1em
+  color: gray(80)
+  margin: 0.75em 0 0
+  font-style: italic
+
+.section-content
+  display: flex
+  flex-direction: column
+  gap: 2.5em
+
+// Hero block
+.hero
+  display: flex
+  flex-direction: column
+  gap: 2em
+
+.hero-intro
+  display: flex
+  gap: 3em
+  justify-content: center
+  margin-bottom: 1.5em
+
+  @media (max-width: 640px)
+    flex-direction: column
+    gap: 1em
+    text-align: center
+
+.hero-intro-col
+  flex: 1
+  max-width: 26em
+  font-size: 1.1em
+  font-weight: normal
+  letter-spacing: 0.02em
+  line-height: 1.5
+  color: light(25, 80)
+  margin: 0
+  text-align: justify
+
+  &:first-child
+    text-align: right
+
+    @media (max-width: 640px)
+      text-align: center
+
+  &:last-child
+    text-align: left
+
+    @media (max-width: 640px)
+      text-align: center
+
+.hero-body
+  display: flex
+  align-items: center
+  gap: 3em
+
+  @media (max-width: 640px)
+    flex-direction: column
+    text-align: center
+
+.hero-photo
+  flex-shrink: 0
+  position: relative
+  width: 280px
+  height: 360px
+  overflow: hidden
+  border-radius: 4px
+
+  a
+    display: block
+    cursor: zoom-in
+    width: 100%
+    height: 100%
+
+  img
+    width: 100%
+    height: 100%
+    object-fit: cover
+    margin: 0
+    transition: opacity 0.2s
+
+  a:hover img
+    opacity: 0.9
+
+  &::after
+    content: ""
+    position: absolute
+    bottom: 35px
+    right: -50px
+    width: 160px
+    height: 28px
+    background: #111
+    transform: rotate(-45deg)
+    pointer-events: none
+
+.hero-details
+  flex: 1
+
+.hero-name
+  font-size: 2em
+  font-weight: normal
+  margin: 0
+  color: light(15, 92)
+  font-family: Georgia, "Times New Roman", serif
+  letter-spacing: 0.03em
+
+.hero-life
+  display: inline-flex
+  align-items: flex-start
+  margin-top: 1em
+
+  @media (max-width: 640px)
+    flex-direction: column
+    align-items: center
+    gap: 0.5em
+
+.hero-column
+  &:first-child
+    text-align: right
+  
+  &:last-child
+    text-align: left
+
+  @media (max-width: 640px)
+    text-align: center !important
+
+.hero-date
+  font-size: 1.1em
+  color: light(35, 75)
+  letter-spacing: 0.03em
+  white-space: nowrap
+
+.hero-separator
+  color: gray(50)
+  font-size: 1.1em
+  padding: 0 0.5em
+  align-self: flex-start
+
+  @media (max-width: 640px)
+    padding: 0
+    align-self: center
+    text-align: center
+
+.hero-place
+  font-size: 0.85em
+  color: gray(80)
+  font-style: italic
+  margin-top: 0.25em
+
+.hero-epitaph
+  margin: 1.5em 0 0
+  font-size: 1em
+  color: light(30, 80)
+  font-style: italic
+  border-top: 1px solid gray(20)
+  padding-top: 1.25em
+  max-width: 28em
+
+  @media (max-width: 640px)
+    max-width: none
+
+// Testimonial block
+.testimonial
+  display: block
+  overflow: hidden
+
+  @media (max-width: 640px)
+    text-align: center
+
+.testimonial--text-only
+  .testimonial-quote p
+    text-indent: 0
+
+.testimonial-image
+  float: left
+  margin: 0 2em 1em 0
+
+  @media (max-width: 640px)
+    float: none
+    margin: 0 auto 1.5em
+
+  a
+    display: block
+    cursor: zoom-in
+
+  img
+    max-width: 600px
+    max-height: 450px
+    width: auto
+    height: auto
+    object-fit: contain
+    background: transparent
+    border-radius: 4px
+    margin: 0
+    transition: opacity 0.2s
+
+    @media (max-width: 640px)
+      max-width: 100%
+
+  a:hover img
+    opacity: 0.85
+
+  figcaption
+    margin-top: 0.6em
+    font-size: 0.8em
+    color: gray(100)
+    text-align: center
+
+.testimonial-quote
+  background: transparent
+  border-left: none
+  padding: 0
+  margin: 0
+
+  p
+    font-size: 1.1em
+    line-height: 1.7
+    font-style: italic
+    margin: 0
+    text-align: left
+    color: light(25, 85)
+
+    &::before
+      content: ""
+      display: inline-block
+      width: 1.8em
+      height: 1.4em
+      margin-right: 0.3em
+      margin-bottom: -0.2em
+      background: light(30, 70)
+      mask: url('/assets/images/quote-open.svg') no-repeat center / contain
+      -webkit-mask: url('/assets/images/quote-open.svg') no-repeat center / contain
+
+    @media (max-width: 640px)
+      text-align: center
+
+  cite
+    display: block
+    text-align: right
+    font-size: 0.8em
+    font-style: normal
+    font-family: Georgia, "Times New Roman", serif
+    color: gray(80)
+    margin-top: 0.75em
+    letter-spacing: 0.02em
+
+    @media (max-width: 640px)
+      text-align: center
+
+  @media (max-width: 640px)
+    padding-left: 0
+    padding-top: 2.5em
+
+    &::before
+      left: 50%
+      transform: translateX(-50%)
+
+// Gallery block
+.gallery
+  position: relative
+
+.gallery-container
+  position: relative
+
+.gallery-title
+  font-size: 1.2em
+  margin: 0 0 1em
+  font-weight: normal
+  color: light(25, 85)
+
+.gallery-track
+  display: flex
+  gap: 1.25em
+  overflow-x: auto
+  scroll-snap-type: x mandatory
+  scrollbar-width: none
+  -ms-overflow-style: none
+  padding-bottom: 0.5em
+  -webkit-overflow-scrolling: touch
+  touch-action: pan-x
+
+  &::-webkit-scrollbar
+    display: none
+
+.gallery-item
+  flex-shrink: 0
+  margin: 0
+  scroll-snap-align: start
+
+  a
+    display: block
+    cursor: zoom-in
+
+  img
+    width: 240px
+    height: 180px
+    object-fit: cover
+    border-radius: 4px
+    margin: 0
+    transition: opacity 0.2s
+
+  a:hover img
+    opacity: 0.85
+
+  figcaption
+    margin-top: 0.5em
+    font-size: 0.8em
+    color: gray(100)
+    max-width: 240px
+
+.gallery-prev,
+.gallery-next
+  position: absolute
+  top: 0
+  height: 180px
+  width: 4em
+  background: transparent
+  border: none
+  color: light(25, 85)
+  cursor: pointer
+  font-size: 1.3em
+  transition: color 0.2s
+  z-index: 10
+  display: flex
+  align-items: center
+  justify-content: center
+
+  &::before
+    content: ""
+    position: absolute
+    inset: 0
+    backdrop-filter: blur(16px)
+    -webkit-backdrop-filter: blur(16px)
+    z-index: -1
+
+  &:hover
+    color: light(10, 95)
+
+.gallery-prev
+  left: 0
+
+  &::before
+    mask: linear-gradient(to right, black 20%, transparent)
+    -webkit-mask: linear-gradient(to right, black 20%, transparent)
+
+.gallery-next
+  right: 0
+
+  &::before
+    mask: linear-gradient(to left, black 20%, transparent)
+    -webkit-mask: linear-gradient(to left, black 20%, transparent)
+
+// Image modal
+.image-modal
+  display: none
+  position: fixed
+  inset: 0
+  z-index: 1000
+  background: transparent
+  padding: 0
+  box-shadow: none
+
+  &.active
+    display: flex
+    align-items: center
+    justify-content: center
+
+.image-modal-backdrop
+  position: absolute
+  inset: 0
+  background: rgba(0, 0, 0, 0.3)
+  backdrop-filter: blur(8px)
+  -webkit-backdrop-filter: blur(8px)
+  cursor: pointer
+
+.image-modal-content
+  position: relative
+  max-width: 90vw
+  max-height: 90vh
+
+  img
+    display: block
+    max-width: 90vw
+    max-height: 90vh
+    border-radius: 4px
+    margin: 0
+
+.image-modal-caption
+  color: light(100)
+  text-align: center
+  font-size: 0.9em
+  margin: 0.75em 0 0
+  opacity: 0.8
+
+.image-modal-close
+  position: absolute
+  top: -2em
+  right: -2em
+  background: none
+  border: none
+  color: light(100)
+  font-size: 2em
+  cursor: pointer
+  padding: 0
+  line-height: 1
+  opacity: 0.7
+  transition: opacity 0.2s
+
+  &:hover
+    opacity: 1

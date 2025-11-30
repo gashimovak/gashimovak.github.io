@@ -1,0 +1,79 @@
+---
+layout: default
+---
+
+<main class="landing">
+
+  {% include hero.html
+     intro_left="Эта страница о памяти и благодарности за всё светлое и доброе, что мы пережили вместе."
+     intro_right="Мы, семья и друзья, помним это и сохраняем здесь то, что для нас значимо и дорого."
+     image="/assets/images/rinat.png"
+     name="Гашимов Ринат Узбекович"
+     birth_date="24 Мая, 1966"
+     death_date="2 Декабря, 2024"
+     birth_place="Уфа, Башкортостан"
+     death_place="Починки, Нижегородская область"
+     epitaph="Любимый муж, отец и надежный друг."
+  %}
+
+  <section class="landing-section">
+    <header class="section-header">
+      <h2 class="section-title">Университетcкие годы</h2>
+    </header>
+    <div class="section-content">
+      {% include gallery.html
+        items=site.data.university
+      %}
+    </div>
+  </section>
+
+  <section class="landing-section">
+    <header class="section-header">
+      <h2 class="section-title">Свадьба</h2>
+    </header>
+    <div class="section-content">
+      {% include gallery.html
+        items=site.data.wedding
+      %}
+    </div>
+  </section>
+
+  <section class="landing-section">
+    <header class="section-header">
+      <h2 class="section-title">Жизнь в Муравленко</h2>
+    </header>
+    <div class="section-content">
+      {% include gallery.html
+        items=site.data.muravlenko
+      %}
+    </div>
+  </section>
+
+  <section class="landing-section">
+    <header class="section-header">
+      <h2 class="section-title">Жизнь в Починках</h2>
+    </header>
+    <div class="section-content">
+      {% include testimonial.html
+        image="/assets/images/pochinki/svetlana_1.png"
+        caption="Семейный ужин"
+        name="Светлана"
+        role="свояченица"
+        quote="Для меня Ринат, это сама доброта. Когда я заболела, он с тетей всегда были рядом. Он возил меня в больницу, они приезжали в Шатки. Когда я еле ходила, он приезжал на машине и меня вез. Никогда не отказал. И когда я лежала в больнице в Починках, меня оперировали по женски. В приемном покое я обнаружила, что забыла паспорт, позвонила ему и он привез. Я тогда подумала, какой он крепкий, здоровый, никогда не обращается в больницы. А я по больницам всегда. Ринат- сама доброта. Он никогда не накричал, не обозвал, всегда мирно и спокойно решал все вопросы."
+     %}
+    </div>
+  </section>
+
+  <section class="landing-section">
+    <header class="section-header">
+      <h2 class="section-title">Путешествия</h2>
+    </header>
+    <div class="section-content">
+      {% include gallery.html
+        items=site.data.travel
+      %}
+    </div>
+  </section>
+</main>
+
+{% include image-modal.html %}

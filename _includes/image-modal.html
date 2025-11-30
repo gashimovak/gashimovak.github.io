@@ -1,0 +1,49 @@
+<div class="image-modal" id="imageModal">
+  <div class="image-modal-backdrop"></div>
+  <div class="image-modal-content">
+    <img src="" alt="Full size image" id="modalImage">
+    <p class="image-modal-caption" id="modalCaption"></p>
+    <button class="image-modal-close" aria-label="Close">&times;</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImage');
+  const modalCaption = document.getElementById('modalCaption');
+  const triggers = document.querySelectorAll('.image-modal-trigger');
+  
+  triggers.forEach(trigger => {
+    trigger.addEventListener('click', function(e) {
+      e.preventDefault();
+      modalImg.src = this.href;
+      
+      const figcaption = this.parentElement.querySelector('figcaption');
+      if (figcaption) {
+        modalCaption.textContent = figcaption.textContent;
+        modalCaption.style.display = 'block';
+      } else {
+        modalCaption.style.display = 'none';
+      }
+      
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  
+  modal.querySelector('.image-modal-backdrop').addEventListener('click', closeModal);
+  modal.querySelector('.image-modal-close').addEventListener('click', closeModal);
+  
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+})();
+</script>
