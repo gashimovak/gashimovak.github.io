@@ -131,9 +131,9 @@
   &::after
     content: ""
     position: absolute
-    bottom: 35px
-    right: -50px
-    width: 160px
+    bottom: 25px
+    right: -60px
+    width: 200px
     height: 28px
     background: #111
     transform: rotate(-45deg)
@@ -309,10 +309,12 @@
   position: relative
 
 .gallery-title
-  font-size: 1.2em
-  margin: 0 0 1em
+  font-size: 0.85em
+  margin: 0 0 0.75em
   font-weight: normal
-  color: light(25, 85)
+  color: gray(70)
+  letter-spacing: 0.1em
+  text-align: center
 
 .gallery-track
   display: flex
@@ -324,6 +326,7 @@
   padding-bottom: 0.5em
   -webkit-overflow-scrolling: touch
   touch-action: pan-x
+  justify-content: center
 
   &::-webkit-scrollbar
     display: none
@@ -353,6 +356,7 @@
     font-size: 0.8em
     color: gray(100)
     max-width: 240px
+    text-align: center
 
 .gallery-prev,
 .gallery-next
@@ -362,14 +366,14 @@
   width: 4em
   background: transparent
   border: none
-  color: light(25, 85)
+  color: light(15, 90)
   cursor: pointer
-  font-size: 1.3em
+  font-size: 1.8em
+  font-weight: bold
   transition: color 0.2s
   z-index: 10
   display: flex
   align-items: center
-  justify-content: center
 
   &::before
     content: ""
@@ -380,10 +384,12 @@
     z-index: -1
 
   &:hover
-    color: light(10, 95)
+    color: light(5, 100)
 
 .gallery-prev
   left: 0
+  justify-content: flex-start
+  padding-left: 0.4em
 
   &::before
     mask: linear-gradient(to right, black 20%, transparent)
@@ -391,10 +397,20 @@
 
 .gallery-next
   right: 0
+  justify-content: flex-end
+  padding-right: 0.4em
 
   &::before
     mask: linear-gradient(to left, black 20%, transparent)
     -webkit-mask: linear-gradient(to left, black 20%, transparent)
+
+// Divider
+.divider
+  border: none
+  height: 1px
+  background: gray(25)
+  width: 6em
+  margin: 1em auto
 
 // Image modal
 .image-modal
